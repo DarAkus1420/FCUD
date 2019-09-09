@@ -1,78 +1,84 @@
 <!--By: vicquiroz y DAngelc3 -->
+<!--Styles By: Hawk-->
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-	<link rel="stylesheet" type="text/css" href="estilo.css">
+    <link rel="stylesheet" type="text/css" href="estilo.css">
 
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-	<!-- Optional theme -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
-	<!-- Latest compiled and minified JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">-->
 
     <script>
-	function allowDrop(ev) 
-	{
-  		ev.preventDefault();
-	}
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
 
-	function drag(ev) 
-	{
-  		ev.dataTransfer.setData("text", ev.target.id);
-	}
+        function drag(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+        }
 
-	function drop(ev) 
-	{
-  		ev.preventDefault();
-  		var data = ev.dataTransfer.getData("text");
-  		ev.target.appendChild(document.getElementById(data));
-	}
-	</script>
+        function drop(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            ev.target.appendChild(document.getElementById(data));
+        }
+
+        function carga_sonido() {
+            document.getElementById('test').innerHTML = '<audio src="Sonido/1up.mp3" autoplay="true">'
+        }
+    </script>
     <title>Editor ficha clinica</title>
 </head>
-<body background="fondo.png">
+
+<body background="Assets/test.png">
     <!--<div id="login">
         <input type="text"><br>
         <input type="password"><br>
         <button id="Ingresar">Log in</button>
     </div>-->
     <br>
-    <div class="container">
-    	<div class="col-xs-12 col-sm-3 col-md-3  col-md-offset-11">
-    		<button id="Tutorial">?</button><br>
-    	</div>
-    </div>
-    <br>
-    <div class="container">
-    	<div class="col-xs-12 col-sm-7 col-md-7">
-    		<div id="formu" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    	</div>
-    	<div class="col-xs-12 col-sm-5 col-md-5">
-    		<div id="arquetipos">
-    			<img id="drag1" src="1.jpg" draggable="true" ondragstart="drag(event)" width="408" height="150">
-    		</div>
-    		<br>
-    		<form action="#" method="post" enctype="multipart/form-data">
-    			<input id="cuadroArras" type="file" name="examinar"><br>
-    			<input type="submit" value="Enviar">
-    		</form>
-    	</div>
-    </div>
-    <br>
-    <div class="container">
-    	<div class="col-xs-12 col-sm-5 col-md-3">
-    		 <button id="Subir archivo">Subir archivo</button><br>
-    	</div>
-    </div>	
-    
-   
-     
-    
+    <div id="menu">
+        <div class="container">
+            <div class="col-xs-12 col-sm-3 col-md-3  col-md-offset-11">
+                <div id="test">
 
-     
+                </div>
+                <button id="Tutorial" style="background:transparent; border:none; color:transparent;" onclick="carga_sonido()"><img src="Assets/question.gif" height="40px"></button><br>
+            </div>
+        </div>
+        <br>
+        <div class="container">
+            <div class="col-xs-12 col-sm-7 col-md-7">
+                <div id="formu" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            </div>
+            <div class="col-xs-12 col-sm-5 col-md-5">
+                <div id="arquetipos">
+                    <img id="drag1" src="Assets/placeholder.jpg" draggable="true" ondragstart="drag(event)" width="408" height="150">
+                </div>
+                <br>
+                <form action="#" method="post" enctype="multipart/form-data" class="center">
+                    <label id="drop-zone">
+                        <input type="file" name="examinar">
+					</label>
+                    <button type="submit" id="Enviar" class="center">Enviar<img src="Assets/clip.png" height="50"></button><br>
+                </form>
+            </div>
+        </div>
+        <br>
+        <div class="container ">
+            <div class="col-xs-12 col-sm-5 col-md-3 ">
+                <button id="Subir archivo ">Subir archivo <img src="Assets/buffer.png " id="img-small"></button><br>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>

@@ -1,19 +1,59 @@
-#arquetipos 
-{
-  	width: 408px;
-  	height: 150px;
-  	border: 1px solid #aaaaaa;
+#arquetipos {
+    width: 408px;
+    height: 150px;
+    border: 1px solid #aaaaaa;
 }
-#formu
-{
-	width: 550px;
+
+#formu {
+    width: 550px;
     height: 650px;
     border: 1px solid #aaaaaa;
 }
-#cuadroArras
-{
-	width: 408px;
-  	height: 400px;
-  	border: 1px solid #aaaaaa;
+
+#cuadroArras {
+    width: 200%;
 }
 
+.center {
+    margin: auto;
+    padding: 10px;
+}
+
+#drop-zone {
+    width: 70%;
+    height: 110px;
+    border: 2px dashed rgba(0, 0, 0, 0.3);
+    font-family: Arial;
+    text-align: center;
+    line-height: 700%;
+    font-size: 15px;
+    color: rgba(0, 0, 0, .3);
+    background-color: rgba(239, 243, 243, 0.5);
+    background-image: url("Assets/insert.png");
+    background-repeat: no-repeat;
+    background-position-x: 70%;
+    background-position-y: 85%;
+    background-size: 25%;
+}
+
+#img-small {
+    width: 10%;
+}
+
+body {
+    background-size: cover;
+}
+
+#menu {
+    width: 70%;
+    margin: auto;
+    line-height: 50%;
+    background-color: rgba(239, 243, 243, 0.5);
+    padding-top: 1%;
+    padding-bottom: 1%;
+    border-radius: 1%;
+}
+
+audio {
+    display: none;
+}
