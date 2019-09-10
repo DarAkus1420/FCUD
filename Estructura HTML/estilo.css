@@ -20,7 +20,7 @@
 }
 
 #drop-zone {
-    width: 70%;
+    width: 90%;
     height: 110px;
     border: 2px dashed rgba(0, 0, 0, 0.3);
     font-family: Arial;
@@ -45,7 +45,7 @@ body {
 }
 
 #menu {
-    width: 70%;
+    width: 80%;
     margin: auto;
     line-height: 50%;
     background-color: rgba(239, 243, 243, 0.5);
