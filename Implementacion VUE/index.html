@@ -1,0 +1,75 @@
+<!--By: vicquiroz y DAngelc3 -->
+<!--Styles By: Hawk-->
+<!--Vue implementation by: DarAkus1420-->
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="estilo.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">-->
+
+    <script>
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+
+        function drag(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+        }
+
+        function drop(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            ev.target.appendChild(document.getElementById(data));
+        }
+    </script>
+    <title>Editor ficha clinica</title>
+
+    <script src="VueJs/Vue.js"></script>
+    <script src="js/Components/Tutorial.js"></script>
+    <script src="js/Components/PlaceHolder.js"></script>
+    <script src="js/Components/CargarArchivo.js"></script>
+    <script src="js/Components/Formulario.js"></script>
+    <script src="js/Components/SubirArchivo.js"></script>
+    
+
+
+</head>
+
+<body background="Assets/test.png">
+    <!--<div id="login">
+        <input type="text"><br>
+        <input type="password"><br>
+        <button id="Ingresar">Log in</button>
+    </div>-->
+    <br>
+    <div id="menu">
+        <div class="container">
+            <tutorial></tutorial>
+        </div>
+        <br>
+        <div class="container">
+            <!--Se muestran los formularios-->
+            <formulario></formulario>
+            <!--Es el placeholder-->
+            <placeholder></placeholder>
+        </div>
+        <br>
+        <div class="container ">
+            <subirarchivo></subirarchivo>
+        </div>
+    </div>
+
+    <script src="js/menu.js"></script>
+</body>
+
+</html>
