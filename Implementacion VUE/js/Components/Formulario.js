@@ -1,5 +1,11 @@
 Vue.component("formulario", {
 
+    data() {
+        return {
+            formulario: 0
+        }
+    },
+
     template: //html
     `
     <div>
@@ -8,5 +14,4 @@ Vue.component("formulario", {
         </div>
     </div>
     `
-})
-
+});

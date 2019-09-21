@@ -1,5 +1,11 @@
 Vue.component("placeholder", {
     
+    data(){
+        return{
+            arquetipos: [12, 2] //Arreglo de archivos
+        }
+    },
+    
     template: //html
     `
     <div class="col-xs-12 col-sm-5 col-md-5">
@@ -10,4 +16,5 @@ Vue.component("placeholder", {
         <cargararchivo></cargararchivo>
     </div>
     `
-})
+
+});
