@@ -21,13 +21,13 @@
 }
 
 #drop-zone {
-    width: 80%;
+    width: 85%;
     height: 80%;
     border: 2px dashed rgba(0, 0, 0, 0.3);
     font-family: Arial;
     text-align: center;
     line-height: 700%;
-    font-size: 15px;
+    font-size: 90%;
     color: rgba(0, 0, 0, .3);
     background-color: rgba(239, 243, 243, 0.5);
     background-image: url("Assets/insert.png");
