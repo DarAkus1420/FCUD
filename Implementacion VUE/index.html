@@ -5,11 +5,14 @@
 <html lang="es">
 
 <head>
+
     <link rel="stylesheet" type="text/css" href="estilo.css">
 
     <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap-theme.min.css">
     
+    <!--
+    	funcion de arrastre hacia el formulario, sera implementada en vue mas adelante
     <script>
         function allowDrop(ev) {
             ev.preventDefault();
@@ -24,10 +27,10 @@
             var data = ev.dataTransfer.getData("text");
             ev.target.appendChild(document.getElementById(data));
         }
-    </script>
+    </script>-->
     
     <title>Editor ficha clinica</title>
-
+	<!--instanciamos los componentes de vue -->
     <script src="VueJs/Vue.js"></script>
     <script src="js/Components/Tutorial.js"></script>
     <script src="js/Components/PlaceHolder.js"></script>
@@ -40,14 +43,15 @@
 </head>
 
 <body background="Assets/test.png">
-    <!--<div id="login">
-        <input type="text"><br>
-        <input type="password"><br>
-        <button id="Ingresar">Log in</button>
-    </div>-->
+    
     <br>
+    <!--aqui definiremos un gran div que sera nuestro "menu", es decir nuestra pagina principal
+    	donde pondremos el formulario y todo lo demas-->
     <div id="menu">
+    	
         <div class="container">
+        	<!--aqui tenemos un boton con un signo de interrogacion, el cual mostrara un tutorial en pantalla, 
+        		para que sea mas facil de entender para los usuarios-->
             <tutorial></tutorial>
         </div>
         <br>
@@ -59,10 +63,11 @@
         </div>
         <br>
         <div class="container ">
+        	<!--Aqui esta el boton con el cual podremos subir el archivo a la base de datos-->
             <subirarchivo></subirarchivo>
         </div>
     </div>
-
+    <!--llama al componente principal de vue-->
     <script src="js/menu.js"></script>
 </body>
 
