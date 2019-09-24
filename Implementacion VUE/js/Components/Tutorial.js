@@ -1,5 +1,6 @@
 Vue.component("tutorial", {
 
+    //Template es lo que se mostrara al llamar al componente en el html 
     template: //html
     `  
     <div class="col-xs-12 col-sm-3 col-md-3  col-md-offset-11">

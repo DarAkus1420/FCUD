@@ -1,5 +1,6 @@
 Vue.component("subirarchivo", {
 
+    //Template es lo que se mostrara al llamar al componente en el html 
     template: //html
     `
     <div>

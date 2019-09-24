@@ -1,11 +1,13 @@
 Vue.component("formulario", {
 
+    //Funcion data, son las variables que tiene el componente
     data() {
         return {
             formulario: 0
         }
     },
 
+    //Template es lo que se mostrara al llamar al componente en el html 
     template: //html
     `
     <div>

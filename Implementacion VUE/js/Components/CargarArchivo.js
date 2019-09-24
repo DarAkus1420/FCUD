@@ -1,10 +1,12 @@
 Vue.component("cargararchivo", {
 
+    //Funcion data, son las variables que tiene el componente
     data() {
         return{
             archivo: 0 //Archivo recibido
         }
     },
+    //Template es lo que se mostrara al llamar al componente en el html 
     template: //html
     `
     <div>
