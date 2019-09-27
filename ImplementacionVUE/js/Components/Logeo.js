@@ -8,7 +8,7 @@ Vue.component('logeo',{
     template://html
     `
     <div>
-        <button><button>
+        <button href="PHP/ejempl1.php"> llama al php</button>
     </div>
     `
     ,
