@@ -9,5 +9,4 @@ const app = new Vue({
         sendSp: "Enviar",
         sendEn: "Send"
     },
-
 });
