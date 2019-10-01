@@ -33,18 +33,34 @@
     <title>Editor ficha clinica</title>
 	<!--instanciamos los componentes de vue -->
     <script src="VueJs/Vue.js"></script>
-    <script src="js/Components/Tutorial.js"></script>
-    <script src="js/Components/PlaceHolder.js"></script>
-    <script src="js/Components/CargarArchivo.js"></script>
-    <script src="js/Components/Formulario.js"></script>
-    <script src="js/Components/SubirArchivo.js"></script>
-    <script src="js/Components/Logeo.js"></script>>
+    <script src="js/ComponentsMenu/Tutorial.js"></script>
+    <script src="js/ComponentsMenu/PlaceHolder.js"></script>
+    <script src="js/ComponentsMenu/CargarArchivo.js"></script>
+    <script src="js/ComponentsMenu/Formulario.js"></script>
+    <script src="js/ComponentsMenu/SubirArchivo.js"></script>
+    <script src="js/ComponentsMenu/Logeo.js"></script>
     
 
 
 </head>
 
 <body background="Assets/test.png">
+    <div id="login">
+        <div class="container">
+            <div class="divcont">
+                <h3>{{ title }}</h3>
+                <form @submit.prevent="sendForm()">
+                    <input type="email"  placeholder="Email" v-model="form.email">
+                    <input type="password" v-if="form.type!=2" :class="{'error':validaPassword}" placeholder="Contraseña" v-model="form.password" >
+                    <input type="password" v-if="form.type==1" :class="{'error':validaRepetirPassword}" placeholder="Repetir contraseña" v-model="form.passwordos" >
+                    <button>Iniciar sesión</button>
+                    <a href="javascript:void(0)" @click="form.type=2" v-if="form.type!=2" >Recuper contraseña</a>
+                    <a href="javascript:void(0)" @click="form.type=1" v-if="form.type!=1" >Registrarme</a>
+                    <a href="javascript:void(0)" @click="form.type=0" v-if="form.type!=0" >Iniciar sesión</a>
+                </form>
+            </div>
+        </div>
+    </div>
     
     <br>
     <!--aqui definiremos un gran div que sera nuestro "menu", es decir nuestra pagina principal
@@ -76,6 +92,7 @@
     </div>
     
     <!--llama al componente principal de vue-->
+    <script src="js/login.js"></script>
     <script src="js/menu.js"></script>
 </body>
 
