@@ -1,5 +1,6 @@
 
 <?php
+include('conex.inc');
 $bulk = new MongoDB\Driver\BulkWrite;
 $document = ['_id' => new MongoDB\BSON\ObjectId, 
             'Nombres' => 'Jaime Rodrigo',
@@ -23,6 +24,6 @@ $document = ['_id' => new MongoDB\BSON\ObjectId,
 
 $_id1 = $bulk->insert($document);
 var_dump($_id1);
-$manager = new MongoDB\Driver\Manager('mongodb://localhost:27017');
+
 $result = $manager->executeBulkWrite('mydb.usuarios', $bulk);
 ?>
