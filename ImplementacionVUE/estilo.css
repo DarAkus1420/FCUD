@@ -1,3 +1,23 @@
+#panel
+{
+	text-align: center;
+	width: 35%;
+
+}
+#pad
+{
+	padding: 1.5%;
+}
+#login
+{
+	z-index: 1;
+	position: absolute;
+	width: 50%;
+	height: 60%;
+	top: 30%;
+	left: 35%;
+}
+
 #arquetipos {       /*cambios al componente que contendran los arquetipos*/
     width: 85%;
     height: 150px;
