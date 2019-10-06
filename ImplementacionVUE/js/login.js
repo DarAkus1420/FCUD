@@ -5,20 +5,33 @@ const login = new Vue({
     //se colocan los datos que se usaran en este objeto
     data:{
         form:{
-            type:0, // 0 = Login , 1 = Registro 2- Recuperar contraseña
+            state: true, // 0 = Login , 1 = Verificacion dos pasos
+            type: 0,
             email:"",
             password:"", 
-            passwordos:""}
+            codigoTSF:""}
     },
     methods:{
         sendForm(){
             if(this.validaType()){
-                console.log(this.form);
+                console.log(this.form.email + this.form.password);
+                this.form.type = 1;
+                
+            }
+        },
+        sendAutentificator(){
+            if(this.validaType()){
+                console.log(this.form.email + this.form.password);
+                this.form.state = false;
+                
             }
         },
         validaType(){
             if(this.form.type==0 && !this.validaEmail && !this.validaPassword){
                 return true;
+            }
+            else if(this.form.type==1 && this.validaCodigo()){
+
             }
             else if(this.form.type==1 && !this.validaEmail && !this.validaRepetirPassword){
                 return true;
@@ -26,7 +39,10 @@ const login = new Vue({
             else if(this.form.type==2 && !this.validaEmail){
                 return true;
             }
-            return false;
+            return true;
+        },
+        validaCodigo(){ //metodo que valida el codigo de verificacion de dos pasos
+
         }
     },
     computed:{
@@ -54,7 +70,7 @@ const login = new Vue({
             }
         },
         title(){
-            return (this.form.type==0)?'Login':(this.form.type==1)?'Registro':'Recuperar contraseña';
+            return (this.form.type==0)?'Login':'Ingrese codigo verificacion';
         }
     }
 });

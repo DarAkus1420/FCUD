@@ -75,6 +75,11 @@ body {
     border-radius: 1%;
 }
 
+
+.hidden{
+    display: none;
+}
+
 /*audio {   posible uso
     display: none;
 }*/

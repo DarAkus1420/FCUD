@@ -45,7 +45,7 @@
 </head>
 
 <body background="Assets/test.png">
-    <div id="login">
+    <div id="login" :class="[form.state ? '':'hidden']">
         <div class="container">
             <div class="divcont">
                 
@@ -56,30 +56,24 @@
                         </div>
                         <div class="panel-body">
                             <div id="pad" class="row">
-                                <div class="col-xs-12 col-sm-12 col-md-12  ">
+                                <div class="col-xs-12 col-sm-12 col-md-12" v-if="form.type==0">
                                     <input class="form-control" type="email"  placeholder="Email" v-model="form.email">
                                 </div>
-                            </div>
-                            <div id="pad" class="row">
-                                <div class="col-xs-12 col-sm-12 col-md-12  ">
-                                    <input class="form-control" type="password" v-if="form.type!=2" :class="{'error':validaPassword}" placeholder="Contraseña" v-model="form.password" >
+                                <div class="col-xs-12 col-sm-12 col-md-12" v-else-if="form.type==1">
+                                    <input class="form-control" type="text"  placeholder="Codigo" v-model="form.codigoTSF">
                                 </div>
                             </div>
                             <div id="pad" class="row">
-                                <div class="col-xs-12 col-sm-12 col-md-12  ">
-                                    <input class="form-control" type="password" v-if="form.type==1" :class="{'error':validaRepetirPassword}" placeholder="Repetir contraseña" v-model="form.passwordos" >
+                                <div class="col-xs-12 col-sm-12 col-md-12" v-if="form.type==0">
+                                    <input class="form-control" type="password" :class="{'error':validaPassword}" placeholder="Contraseña" v-model="form.password" >
                                 </div>
-                                
                             </div>
                             <div id="pad" class="row">
-                                <button class="btn btn-primary">Iniciar sesión</button>
+                                <button class="btn btn-primary" v-if="form.type==0">Iniciar sesión</button>
+                                <button class="btn btn-primary" v-else-if="form.type==1">Validar Codigo</button>
                             </div>
                         </div>
                     </div>
-                    
-                    <a href="javascript:void(0)" @click="form.type=2" v-if="form.type!=2" >Recuper contraseña</a>
-                    <a href="javascript:void(0)" @click="form.type=1" v-if="form.type!=1" >Registrarme</a>
-                    <a href="javascript:void(0)" @click="form.type=0" v-if="form.type!=0" >Iniciar sesión</a>
                 </form>
             </div>
         </div>
