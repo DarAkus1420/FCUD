@@ -16,7 +16,6 @@ const login = new Vue({
             if(this.validaType()){
                 console.log(this.form.email + this.form.password);
                 this.form.type = 1;
-                
             }
         },
         sendAutentificator(){
@@ -62,15 +61,12 @@ const login = new Vue({
                 return true;
             }
         },
-        validaRepetirPassword(){
-            if(this.form.password==this.form.passwordos){
-                return false;
-            } else{
-                return true;
-            }
-        },
         title(){
             return (this.form.type==0)?'Login':'Ingrese codigo verificacion';
         }
+    },
+    components: {
+        'logincomponent': loginComponent
     }
 });
+
