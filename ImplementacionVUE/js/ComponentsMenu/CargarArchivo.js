@@ -10,12 +10,15 @@ Vue.component("cargararchivo", {
     template: //html
     `
     <div>
+        <div class="col-xs-12 col-sm-5 col-md-5">
         <form action="#" method="post" enctype="multipart/form-data" class="center">
             <label id="drop-zone">
-                <input type="file" name="examinar" class="form-control-file" accept=".json,.xml,.adsl">
+                <input type="file" name="examinar" class="form-control-file" accept=".json,.xml,.adl">
 		    </label>
-            <button type="submit" id="Enviar" class="center">Enviar<img src="Assets/clip.png" height="50"></button><br>
+            
         </form>
+        </div>
+
     </div>
     `
 });
