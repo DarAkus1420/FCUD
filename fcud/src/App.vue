@@ -1,20 +1,41 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <cabecera></cabecera>
-    <lista></lista>
-  </div>
+  	<div id="app">
+		<div class="container">
+            <!--Se muestran los formularios-->
+            <Formulario></Formulario>
+            <!--Es el placeholder-->
+
+            <CargarArchivo></CargarArchivo>
+            <PlaceHolder></PlaceHolder>
+        </div>
+        <br>
+        <div class="container ">
+        	<!--Aqui esta el boton con el cual podremos subir el archivo a la base de datos-->
+            <SubirArchivo></SubirArchivo>
+        </div>
+        <div class="container">   
+        </div>
+	</div>
 </template>
 
 <script>
-import Cabecera from './components/Cabecera.vue'
-import Lista from './components/Lista.vue'
+
+import Sesion from './components/Sesion.vue'
+import SubirArchivo from './components/SubirArchivo.vue'
+import Tutorial from './components/Tutorial.vue'
+import PlaceHolder from './components/PlaceHolder.vue'
+import CargarArchivo from './components/CargarArchivo.vue'
+import Formulario from './components/Formulario.vue'
 
 export default {
-  name: 'app',
-  components: {
-    Cabecera,
-    Lista
-  }
+	name: 'app',
+  	components: {
+		Tutorial,
+		SubirArchivo,
+		Sesion,
+		PlaceHolder,
+		CargarArchivo,
+		Formulario
+  	}
 }
 </script>
