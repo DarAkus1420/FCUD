@@ -1,7 +1,9 @@
 <template>
   	<div id="app">
+		<div id="menu">
 		<div class="container">
             <!--Se muestran los formularios-->
+			<Tutorial></Tutorial>
             <Formulario></Formulario>
             <!--Es el placeholder-->
 
@@ -15,6 +17,7 @@
         </div>
         <div class="container">   
         </div>
+		</div>
 	</div>
 </template>
 
@@ -26,6 +29,7 @@ import Tutorial from './components/Tutorial.vue'
 import PlaceHolder from './components/PlaceHolder.vue'
 import CargarArchivo from './components/CargarArchivo.vue'
 import Formulario from './components/Formulario.vue'
+import styles from './assets/estilo.css'
 
 export default {
 	name: 'app',
@@ -36,6 +40,6 @@ export default {
 		PlaceHolder,
 		CargarArchivo,
 		Formulario
-  	}
+	}
 }
 </script>
