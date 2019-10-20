@@ -16,3 +16,11 @@ export default {
     },
 }
 </script>
+
+<style scoped>
+    #formu {        /*cambios al componente que contendra el formulario*/
+        width: 100%;
+        height: 650px;
+        border: 1px solid #aaaaaa;
+    }
+</style>

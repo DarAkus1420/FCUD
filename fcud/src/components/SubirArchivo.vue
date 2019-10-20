@@ -11,3 +11,9 @@ export default {
     name: 'SubirArchivo'
 }
 </script>
+
+<style scoped>
+    #img-small {        /*tamaño imagenes*/
+        width: 10%;
+    }
+</style>

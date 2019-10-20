@@ -4,8 +4,7 @@
         <form action="#" method="post" enctype="multipart/form-data" class="center">
             <label id="drop-zone">
                 <input type="file" name="examinar" class="form-control-file" accept=".json,.xml,.adl">
-		    </label>
-            
+		    </label>           
         </form>
         </div>
     </div>
@@ -16,3 +15,4 @@ export default {
     name: 'CargarArchivo'
 }
 </script>
+

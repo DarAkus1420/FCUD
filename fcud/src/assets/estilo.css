@@ -25,12 +25,7 @@
 	left: 35%;
 }
 
-#arquetipos {       /*cambios al componente que contendran los arquetipos*/
-    width: 100%;
-    height: 534px;
-    border: 1px solid #aaaaaa;
-    overflow: scroll; /*agrega scroll al cuadro de arquetipos*/
-}
+
 
 #formu {        /*cambios al componente que contendra el formulario*/
     width: 100%;
