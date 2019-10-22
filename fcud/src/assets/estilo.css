@@ -73,15 +73,7 @@ body {
     background-image: url(test.png);
 }
 
-#menu {     /*cambios al componente de menu*/
-    width: 95%;
-    margin: auto;
-    line-height: 50%;
-    background-color: rgba(239, 243, 243, 0.5);
-    padding-top: 1%;    /*limite superior*/
-    padding-bottom: 1%;
-    border-radius: 1%;
-}
+
 
 
 .hidden{

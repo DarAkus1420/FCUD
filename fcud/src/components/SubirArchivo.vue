@@ -1,9 +1,7 @@
 <template>
-    <div>
-        <div class="col-xs-12 col-sm-5 col-md-3">
-            <button id="Subir archivo" class="btn btn-success">Subir Archivo<img src="../assets/buffer.png" id="img-small"></button><br>
-        </div>
-    </div>
+    <b-col sm='5' md='3'>
+        <button id="Subir archivo" class="btn btn-success">Subir Archivo<img src="../assets/buffer.png" id="img-small"></button><br>
+    </b-col>
 </template>
 
 <script>

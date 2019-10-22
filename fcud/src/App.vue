@@ -1,20 +1,24 @@
 <template>
   	<div id="app">
 		<div id="menu">
-			<div class="container">
+			<b-container>
             	<!--Se muestran los formularios-->
 				<Tutorial></Tutorial>            
-        	</div>
-			<div class="container">
-				<Formulario></Formulario>
-            	<!--Es el placeholder-->
-            	<CargarArchivo></CargarArchivo>
-            	<PlaceHolder></PlaceHolder>
-			</div>
-        	<div class="container ">
+			</b-container>
+			<b-container>
+				<b-row>
+					<Formulario></Formulario>
+            		<!--Es el placeholder-->
+					<b-col sm='5' md='5'>
+            			<PlaceHolder></PlaceHolder>
+						<CargarArchivo></CargarArchivo>
+					</b-col>
+				</b-row>
+			</b-container>
+        	<b-container>
         		<!--Aqui esta el boton con el cual podremos subir el archivo a la base de datos-->
             	<SubirArchivo></SubirArchivo>
-        	</div>
+        	</b-container>
 		</div>
 	</div>
 </template>
