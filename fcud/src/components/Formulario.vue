@@ -1,5 +1,5 @@
 <template>
-    <b-col sm='7' md='7'>
+    <b-col sm='7' md='7' xl='8'>
         <div id="formu" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
     </b-col>
 </template>

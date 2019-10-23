@@ -9,9 +9,9 @@
 				<b-row>
 					<Formulario></Formulario>
             		<!--Es el placeholder-->
-					<b-col sm='5' md='5'>
-            			<PlaceHolder></PlaceHolder>
+					<b-col sm='5' md='5' xl='5'>
 						<CargarArchivo></CargarArchivo>
+						<PlaceHolder></PlaceHolder>
 					</b-col>
 				</b-row>
 			</b-container>
@@ -52,7 +52,7 @@ export default {
     	margin: auto;
     	line-height: 50%;
     	background-color: rgba(239, 243, 243, 0.5);
-    	padding-top: 1%;    /*limite superior*/
+    	padding-top: 12%;    /*limite superior*/
     	padding-bottom: 1%;
     	border-radius: 1%;
 	}

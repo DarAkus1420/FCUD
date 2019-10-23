@@ -2,6 +2,7 @@
 
 ## Project setup
 ```
+Para instalar la carpeta node_modules usar
 npm install
 ```
 
@@ -17,3 +18,4 @@ npm run build
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
