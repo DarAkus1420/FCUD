@@ -1,5 +1,6 @@
 <template>
   	<div id="app">
+		<br>
 		<div id="menu">
 			<b-container>
             	<!--Se muestran los formularios-->
@@ -46,13 +47,13 @@ export default {
 }
 </script>
 
-<style scoped>
-	#app {     /*cambios al componente de menu*/
+<style>
+	#menu {     /*cambios al componente de menu*/
     	width: 95%;
     	margin: auto;
     	line-height: 50%;
     	background-color: rgba(239, 243, 243, 0.5);
-    	padding-top: 12%;    /*limite superior*/
+    	padding-top: 1%;    /*limite superior*/
     	padding-bottom: 1%;
     	border-radius: 1%;
 	}
