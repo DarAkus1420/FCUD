@@ -1,6 +1,9 @@
 <template>
   	<div id="app">
 		<br>
+		<div id="tapaFondo">
+			<Login class="login"></Login>
+		</div>
 		<div id="menu">
 			<b-container>
             	<!--Se muestran los formularios-->
@@ -32,7 +35,9 @@ import Tutorial from './components/Tutorial.vue'
 import PlaceHolder from './components/PlaceHolder.vue'
 import CargarArchivo from './components/CargarArchivo.vue'
 import Formulario from './components/Formulario.vue'
-import styles from './assets/estilo.css'
+import Login from './components/Login.vue'
+
+//import styles from './assets/estilo.css' sujeto a revisiones
 
 export default {
 	name: 'app',
@@ -42,7 +47,8 @@ export default {
 		Sesion,
 		PlaceHolder,
 		CargarArchivo,
-		Formulario
+		Formulario,
+		Login
 	}
 }
 </script>
@@ -58,32 +64,25 @@ export default {
     	border-radius: 1%;
 	}
 	
-	.body{
+	body{
     	background-size: cover;
     	background-image: url(./assets/test.png);
 	}
 
 	#tapaFondo{
-    	background-color:rgba(0,0,0,0.6);
+    	background-color:rgba(100,100,0,0.6);
     	width: 100%;
     	height: 100%;
 	}
 
-	#panel{
-		text-align: center;
-		width: 35%;
-	}
-	#pad{
-		padding: 1.5%;
-	}
-
-	#login{
+	.login{
 		z-index: 1;
 		position: absolute;
 		width: 50%;
 		height: 60%;
 		top: 30%;
 		left: 35%;
+		display: none;
 	}
 
 	#cuadroArras {      /*dimensiones de cuadro para subir archivos en forma de arrastre */
