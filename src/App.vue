@@ -4,7 +4,7 @@
 		<div id="tapaFondo" style="align-content:left">
 			<Login class="login" @cambioEstado='state = $event' :class="[state ? '':'hidden']"></Login>
 		</div>
-		<div id="menu">
+		<div id="menu" v-if="!state">
 			<b-container>
             	<!--Se muestran los formularios-->
 				<Tutorial></Tutorial>            
