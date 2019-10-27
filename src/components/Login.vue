@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div class="divcont">      
-            <form @submit.prevent="form.type==0? sendForm():sendAutentificator()">
+            <b-form @submit.prevent="form.type==0? sendForm():sendAutentificator()">
                 <b-card id="panel">
                     <div>
                         <h4>{{ title }}</h4>
@@ -22,13 +22,13 @@
                         </b-row>
                         <b-row id="pad" class="ancho">
                             <b-col sm='10' md='12'>
-                                <b-button block variant="primary" v-if="form.type==0">Iniciar sesión</b-button>
-                                <b-button block variant="primary" v-else-if="form.type==1">Validar Codigo</b-button>
+                                <b-button type='submit' block variant="primary" v-if="form.type==0">Iniciar sesión</b-button>
+                                <b-button type='submit' block variant="primary" v-else-if="form.type==1">Validar Codigo</b-button>
                             </b-col>
                         </b-row>
                     </div>
                 </b-card>
-            </form>
+            </b-form>
         </div>
     </div>
 </template>
@@ -48,17 +48,18 @@ export default {
     methods:{
         sendForm(){
             if(this.validaType()){
+                //Implementar php
                 console.log(this.form.email + this.form.password);
                 this.form.type = 1;
-                console.log("SENDFORM");
             }
         },
         sendAutentificator(){
             if(this.validaType()){
-                console.log(this.form.email + this.form.password);
-                this.form.state = false;
-                console.log("a");
+                //Implementar php
+                console.log(this.form.codigoTSF);
                 
+                this.form.state = false;
+                this.$emit('cambioEstado', this.state);
             }
         },
         validaType(){
@@ -77,7 +78,7 @@ export default {
             return true;
         },
         validaCodigo(){ //metodo que valida el codigo de verificacion de dos pasos
-
+            
         }
     },
     computed:{
@@ -111,6 +112,6 @@ export default {
 
     #panel{
 		text-align: center;
-		width: 55%;
+		width: 40%;
 	}
 </style>

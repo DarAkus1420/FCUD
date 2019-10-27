@@ -1,8 +1,8 @@
 <template>
   	<div id="app">
 		<br>
-		<div id="tapaFondo">
-			<Login class="login"></Login>
+		<div id="tapaFondo" style="align-content:left">
+			<Login class="login" @cambioEstado='state = $event' :class="[state ? '':'hidden']"></Login>
 		</div>
 		<div id="menu">
 			<b-container>
@@ -49,7 +49,12 @@ export default {
 		CargarArchivo,
 		Formulario,
 		Login
-	}
+	},
+	data(){
+		return{
+			state: true
+		}
+	},
 }
 </script>
 
@@ -82,6 +87,10 @@ export default {
 		height: 60%;
 		top: 30%;
 		left: 35%;
+
+	}
+
+	.hidden{
 		display: none;
 	}
 

@@ -1,6 +1,6 @@
 <template>
     <b-col sm='5' md='3'>
-        <button id="Subir archivo" class="btn btn-success">Subir Archivo<img src="../assets/buffer.png" id="img-small"></button><br>
+        <b-button id="Subir archivo" variant="success">Subir Archivo<img src="../assets/buffer.png" id="img-small"></b-button><br>
     </b-col>
 </template>
 
