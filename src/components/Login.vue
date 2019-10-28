@@ -1,36 +1,34 @@
 <template>
-    <div class="container">
-        <div class="divcont">      
-            <b-form @submit.prevent="form.type==0? sendForm():sendAutentificator()">
-                <b-card id="panel">
-                    <div>
-                        <h4>{{ title }}</h4>
-                    </div>
-                    <div>
-                        <b-row id='pad'>
-                            <b-col xs='12' sm='12' md='12' v-if="form.type==0">
-                                <input class="form-control" type="email"  placeholder="Email" v-model="form.email">
-                            </b-col>
-                            <b-col xs='12' sm='12' md='12' v-else-if="form.type==1">
-                                <input class="form-control" type="text"  placeholder="Codigo" v-model="form.codigoTSF">
-                            </b-col>
-                        </b-row>
-                        <b-row id="pad">
-                            <b-col xs="12" sm="12" md="12" v-if="form.type==0">
-                                <input class="form-control" type="password" :class="{'error':validaPassword}" placeholder="Contraseña" v-model="form.password" >
-                            </b-col>
-                        </b-row>
-                        <b-row id="pad" class="ancho">
+    <b-container>
+            <b-row align-v="center">
+                <b-col sm="8" xs="8" md="12" align-self="center"> 
+                    <b-form @submit.prevent="form.type==0? sendForm():sendAutentificator()">
+                        <b-card id="panel">
+                            <h4>{{ title }}</h4>
+                            <b-row id='pad'>
+                                <b-col xs='12' sm='12' md='12' v-if="form.type==0">
+                                    <input class="form-control" type="email"  placeholder="Email" v-model="form.email">
+                                </b-col>
+                                <b-col xs='12' sm='12' md='12' v-else-if="form.type==1">
+                                    <input class="form-control" type="text"  placeholder="Codigo" v-model="form.codigoTSF">
+                                </b-col>
+                            </b-row>
+                            <b-row id="pad">
+                                <b-col xs="12" sm="12" md="12" v-if="form.type==0">
+                                    <input class="form-control" type="password" :class="{'error':validaPassword}" placeholder="Contraseña" v-model="form.password" >
+                                </b-col>
+                            </b-row>
+                            <b-row id="pad" class="ancho">
                             <b-col sm='10' md='12'>
-                                <b-button type='submit' block variant="primary" v-if="form.type==0">Iniciar sesión</b-button>
-                                <b-button type='submit' block variant="primary" v-else-if="form.type==1">Validar Codigo</b-button>
-                            </b-col>
-                        </b-row>
-                    </div>
-                </b-card>
-            </b-form>
-        </div>
-    </div>
+                                    <b-button type='submit' block variant="primary" v-if="form.type==0">Iniciar sesión</b-button>
+                                    <b-button type='submit' block variant="primary" v-else-if="form.type==1">Validar Codigo</b-button>
+                                </b-col>
+                            </b-row>
+                        </b-card>
+                    </b-form>
+                </b-col>
+            </b-row>
+    </b-container>
 </template>
 
 <script>
@@ -112,6 +110,5 @@ export default {
 
     #panel{
 		text-align: center;
-		width: 40%;
 	}
 </style>

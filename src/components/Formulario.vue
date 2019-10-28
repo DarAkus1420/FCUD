@@ -1,6 +1,10 @@
 <template>
-    <b-col sm='7' md='7' xl='5'>
-        <div id="formu" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <b-col sm='7' md='7' xl='7'>
+        <div id="formu" ondrop="drop(event)" ondragover="allowDrop(event)" >
+            <p v-for="(item,key) in formularioBase" v-bind:key="item.id" >
+                {{key}} <input v-model="formularioBase.Nombre"></input>
+            </p>
+        </div>
     </b-col>
 </template>
 
@@ -9,7 +13,12 @@ export default {
     name: 'Formulario',
     data() {
         return {
-            formulario: 0
+            formularioBase:{
+                Nombre: "123",
+                Rut   : "",
+                Edad  : "",
+                Fecha_Nacimiento: "",
+            }
         }
     },
 }

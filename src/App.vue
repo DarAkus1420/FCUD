@@ -1,9 +1,7 @@
 <template>
   	<div id="app">
 		<br>
-		<div id="tapaFondo" style="align-content:left">
-			<Login class="login" @cambioEstado='state = $event' :class="[state ? '':'hidden']"></Login>
-		</div>
+		<Login class="login" @cambioEstado='state = $event' v-if="state"></Login>
 		<div id="menu" v-if="!state">
 			<b-container>
             	<!--Se muestran los formularios-->
@@ -37,7 +35,6 @@ import CargarArchivo from './components/CargarArchivo.vue'
 import Formulario from './components/Formulario.vue'
 import Login from './components/Login.vue'
 
-//import styles from './assets/estilo.css' sujeto a revisiones
 
 export default {
 	name: 'app',
@@ -72,28 +69,16 @@ export default {
 	body{
     	background-size: cover;
     	background-image: url(./assets/test.png);
+		background-repeat: no-repeat; 
 	}
 
-	#tapaFondo{
-    	background-color:rgba(100,100,0,0.6);
-    	width: 100%;
-    	height: 100%;
-	}
+
 
 	.login{
-		z-index: 1;
-		position: absolute;
+		background-size: cover;
 		width: 50%;
-		height: 60%;
-		top: 30%;
-		left: 35%;
-
 	}
-
-	.hidden{
-		display: none;
-	}
-
+	
 	#cuadroArras {      /*dimensiones de cuadro para subir archivos en forma de arrastre */
     	width: 200%;
 	}

@@ -6,7 +6,26 @@
 
 <script>
 export default {
-    name: 'SubirArchivo'
+    name: 'SubirArchivo',
+    methods:{
+        leerArchivo(e) {
+            let archivo = e.target.files[0];
+            if (!archivo) {
+                return;
+            }
+            let lector = new FileReader();
+            lector.onload = function(e) {
+                let contenido = e.target.result;
+                mostrarContenido(contenido);
+            };
+            lector.readAsText(archivo);
+        },
+        mostrarContenido(contenido) {
+            contenido=JSON.stringify(contenido,null,4);
+            contenido=contenido.slice(4)
+            console.log(contenido)
+        }
+    }
 }
 </script>
 
