@@ -1,15 +1,18 @@
 <template>
     <b-col sm='7' md='7' xl='7'>
-        <div id="formu" ondrop="drop(event)" ondragover="allowDrop(event)">
-            <p v-for="(item, key) in this.formularioBase" v-bind:key="key">
-                {{key}}
-                <input v-model="formularioBase[key]">
-            </p>
-            <hr>
-           
-        </div>
-
-        <button @click="testeo()">pruebame</button>
+        <b-form >
+            <b-card no-body>
+            <b-tabs content-class="mt-4" card fill>
+            <b-tab title="Datos Obligatorios" active>
+                <p v-for="(item, key) in this.formularioBase" v-bind:key="key">
+                    <b-form-group v-bind:description="key"></b-form-group>
+                    <b-form-input v-model="formularioBase[key]"></b-form-input>
+                </p>
+                <b-button @click="testeo()" variant="primary">Prueba de Formulario</b-button>
+            </b-tab>
+            <b-tab title="Otros Datos" ondrop="dop(event)" ondragover="allowDropEvent(event)">
+                <p>Aquí se agregan los arquetipos</p>
+            </b-tab></b-tabs></b-card></b-form>
     </b-col>
 </template>
 
@@ -23,7 +26,6 @@ export default {
                 Rut   : "",
                 Edad  : "",
                 Fecha_Nacimiento: "",
-                A: "",
             },
             formularioArqeutipos:{
 
