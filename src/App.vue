@@ -60,19 +60,15 @@ export default {
     	width: 95%;
     	margin: auto;
     	line-height: 50%;
-    	background-color: rgba(239, 243, 243, 0.5);
+    	background-color: #36393F;
     	padding-top: 1%;    /*limite superior*/
     	padding-bottom: 1%;
     	border-radius: 1%;
 	}
 	
 	body{
-    	background-size: cover;
-    	background-image: url(./assets/test.png);
-		background-repeat: no-repeat; 
+		background:#202225 !important;
 	}
-
-
 
 	.login{
 		background-size: cover;
@@ -96,13 +92,13 @@ export default {
 	#drop-zone {        /*dimensiones de cuadro para subir archivos*/
     	width: 100%;
     	height: 80%;
-    	border: 2px dashed rgba(0, 0, 0, 0.3);
+    	border: 2px dashed #2f3136;
     	font-family: Arial;
     	text-align: center; 
     	line-height: 700%;  /*separacion*/
     	font-size: 90%;
-    	color: rgba(0, 0, 0, .3);
-    	background-color: rgba(239, 243, 243, 0.5);
+    	color: #2f3136;
+    	background-color: #202225;
     	background-image: url("./assets/insert.png");
     	background-repeat: no-repeat; /*quita el modo mosaico*/
     	background-position-x: 95%;

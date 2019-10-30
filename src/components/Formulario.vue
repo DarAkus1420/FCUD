@@ -1,9 +1,9 @@
 <template>
     <b-col sm='7' md='7' xl='7'>
         <b-form >
-            <b-card no-body>
-            <b-tabs content-class="mt-4" card fill>
-            <b-tab title="Datos Obligatorios" active>
+            <b-card bg-variant="dark" no-body>
+            <b-tabs content-class="mt-4" card pills fill>
+            <b-tab title="Datos Obligatorios" class="tab">
                 <p v-for="(item, key) in this.formularioBase" v-bind:key="key">
                     <b-form-group v-bind:description="key"></b-form-group>
                     <b-form-input v-model="formularioBase[key]"></b-form-input>
@@ -27,7 +27,7 @@ export default {
                 Edad  : "",
                 Fecha_Nacimiento: "",
             },
-            formularioArqeutipos:{
+            formularioArquetipos:{
 
             }
         }
@@ -45,5 +45,8 @@ export default {
         width: 100%;
         height: 650px;
         border: 1px solid #aaaaaa;
+    }
+    .pills{
+        color: black;
     }
 </style>
