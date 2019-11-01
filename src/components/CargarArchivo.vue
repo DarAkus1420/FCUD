@@ -1,38 +1,63 @@
 <template>
-    <form action="#" method="post" enctype="multipart/form-data" class="center">
-        <label id="drop-zone">
-            <input type="file" name="examinar" class="form-control-file" accept=".json,.xml,.adl">
-	    </label>           
-    </form>
+    <div>
+        <label class="center drop-zone">
+            <input type="file" name="examinar" class="form-control-file" accept=".json,.xml,.adl" @change="cargarArchivo">
+        
+	    </label>  
+        {{formulario}} 
+        <button @click="mostrar()">HOLA</button>
+    </div>       
 </template>
 
 <script>
 export default {
-    name: 'CargarArchivo'
+    name: 'CargarArchivo',
+    data(){
+        return{
+            archivo: 0,
+            formulario: undefined,
+
+        }
+    },
+    methods:{
+        cargarArchivo(events){
+
+            
+            this.archivo = event.target.files;
+            // let promesa = new Promise()
+
+            for(let i = 0, f; f = this.archivo[i];i++){
+                let lector = new FileReader();
+                lector.onload = function(e) {
+                    let contenido = e.target.result;
+                    let hola = JSON.parse(contenido);
+                    console.log(hola);
+                }
+                lector.readAsText(f);
+            };
+
+        
+        },
+        mostrar(){
+            console.log(this.hola);
+        }
+        
+    }
 }
 </script>
 
 <style scoped>
-    #drop-zone {        /*dimensiones de cuadro para subir archivos*/
+    .drop-zone {        /*dimensiones de cuadro para subir archivos*/
         width: 100%;
-        height: 80%;
-        border: 2px dashed rgba(0, 0, 0, 0.3);
+        height: auto;
+        border: 2px rgb(0, 0, 0, 0.3);
         font-family: Arial;
         text-align: center; 
         line-height: 700%;  /*separacion*/
-        font-size: 90%;
+        font-size: 100%;
         color: rgba(0, 0, 0, .3);
         background-color: rgba(239, 243, 243, 0.5);
-        background-image: url("../assets/insert.png");
-        background-repeat: no-repeat; /*quita el modo mosaico*/
-        background-position-x: 95%;
-        background-position-y: 85%;
-        background-size: 20%;
     }
 
-    .center {       /*configuracion para centrar*/
-        margin: auto;
-        padding: 10px;
-    }
 </style>
 

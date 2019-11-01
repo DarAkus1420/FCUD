@@ -8,7 +8,7 @@
                 <p v-for="(item, key) in this.formularioBase" v-bind:key="key">
                     <b-form-group v-bind:description="key"></b-form-group>
                     <b-form-input v-model="formularioBase[key]" v-if="cargado"></b-form-input> <!-- Hacerlo de la forma legal "investiga"-->
-                    <b-form-input v-model="formularioBase[key]" v-else></b-form-input>
+                    <b-form-input v-model="formularioBase[key]" disabled v-else></b-form-input> 
                 </p>
                 <b-button @click="testeo()" variant="primary">Prueba de Formulario</b-button>
             </b-tab>
@@ -32,7 +32,7 @@ export default {
             formularioArquetipos:{
 
             },
-            cargado: true,
+            cargado: false,
 
         }
     },

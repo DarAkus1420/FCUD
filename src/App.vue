@@ -65,10 +65,7 @@ export default {
     	padding-bottom: 1%;
     	border-radius: 1%;
 	}
-	
-	body{
-		background:#202225 !important;
-	}
+
 
 	.login{
 		background-size: cover;
@@ -79,30 +76,9 @@ export default {
     	width: 200%;
 	}
 
-	.center {       /*configuracion para centrar*/
-    	margin: auto;
-    	padding: 10px;
-	}
 
 	.wena{
     	font-size: 30cm;
     	color:red;
-	}
-
-	#drop-zone {        /*dimensiones de cuadro para subir archivos*/
-    	width: 100%;
-    	height: 80%;
-    	border: 2px dashed #2f3136;
-    	font-family: Arial;
-    	text-align: center; 
-    	line-height: 700%;  /*separacion*/
-    	font-size: 90%;
-    	color: #2f3136;
-    	background-color: #202225;
-    	background-image: url("./assets/insert.png");
-    	background-repeat: no-repeat; /*quita el modo mosaico*/
-    	background-position-x: 95%;
-    	background-position-y: 85%;
-    	background-size: 20%;
 	}
 </style>
