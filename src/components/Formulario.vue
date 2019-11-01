@@ -7,7 +7,8 @@
                 <div class="text-light">
                 <p v-for="(item, key) in this.formularioBase" v-bind:key="key">
                     <b-form-group v-bind:description="key"></b-form-group>
-                    <b-form-input v-model="formularioBase[key]"></b-form-input>
+                    <b-form-input v-model="formularioBase[key]" disabled v-if="cargado"></b-form-input> <!-- Hacerlo de la forma legal "investiga"-->
+                    <b-form-input v-model="formularioBase[key]" v-else></b-form-input>
                 </p>
                 <b-button @click="testeo()" variant="primary">Prueba de Formulario</b-button>
                 </div>
@@ -26,20 +27,23 @@ export default {
     data() {
         return {
             formularioBase:{
-                Nombre: "",
-                Rut   : "",
-                Edad  : "",
-                Fecha_Nacimiento: "",
+                Nombre: "hkajsdf",
+                Rut   : "123",
+                Edad  : "123",
+                Fecha_Nacimiento: "123",
             },
             formularioArquetipos:{
 
-            }
+            },
+            cargado: true,
+
         }
     },
     methods:{
         testeo(){
             console.log(this.formularioBase);
-        }
+        },
+
     }
 }
 </script>
@@ -52,5 +56,9 @@ export default {
     }
     .pills{
         color: black;
+    }
+
+    .colorcito{
+        background-color: #36393F;
     }
 </style>
