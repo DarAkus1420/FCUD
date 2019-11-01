@@ -60,7 +60,7 @@ export default {
     	width: 95%;
     	margin: auto;
     	line-height: 50%;
-    	background-color: #36393F;
+    	background-color: #2f3136;
     	padding-top: 1%;    /*limite superior*/
     	padding-bottom: 1%;
     	border-radius: 1%;
