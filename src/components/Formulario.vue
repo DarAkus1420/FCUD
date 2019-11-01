@@ -1,6 +1,7 @@
 <template>
     <b-col sm='7' md='7' xl='7'>
-        <b-form >
+        <b-form>
+            <div class="text-light">
             <b-card bg-variant="dark"  no-body>
             <b-tabs content-class="mt-4" card pills fill>
             <b-tab title="Datos Obligatorios" class="tab">
@@ -13,7 +14,7 @@
             </b-tab>
             <b-tab title="Otros Datos" ondrop="dop(event)" ondragover="allowDropEvent(event)">
                 <p>Aquí se agregan los arquetipos</p>
-            </b-tab></b-tabs></b-card></b-form>
+            </b-tab></b-tabs></b-card></div></b-form>
     </b-col>
 </template>
 
