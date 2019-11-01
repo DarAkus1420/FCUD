@@ -1,21 +1,17 @@
 <template>
-    <b-col sm='7' md='7' xl='7' >
-        <b-form>
+    <b-col sm='7' md='7' xl='7'>
+        <b-form >
             <b-card bg-variant="dark" no-body>
             <b-tabs content-class="mt-4" card pills fill>
             <b-tab title="Datos Obligatorios" class="tab">
-                <div class="text-light">
                 <p v-for="(item, key) in this.formularioBase" v-bind:key="key">
                     <b-form-group v-bind:description="key"></b-form-group>
                     <b-form-input v-model="formularioBase[key]"></b-form-input>
                 </p>
                 <b-button @click="testeo()" variant="primary">Prueba de Formulario</b-button>
-                </div>
             </b-tab>
             <b-tab title="Otros Datos" ondrop="dop(event)" ondragover="allowDropEvent(event)">
-                <div class="text-light">
                 <p>Aquí se agregan los arquetipos</p>
-                </div>
             </b-tab></b-tabs></b-card></b-form>
     </b-col>
 </template>
