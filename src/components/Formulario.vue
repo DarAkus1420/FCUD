@@ -13,8 +13,13 @@
                 <b-button @click="testeo()" variant="primary">Prueba de Formulario</b-button>
             </b-tab>
             <b-tab title="Otros Datos" ondrop="dop(event)" ondragover="allowDropEvent(event)">
-                <p>Aquí se agregan los arquetipos</p>
+                <p v-for="(item, key) in this.formularioArquetipos" v-bind:key="key">
+                    <b-form-group v-bind:description="key"></b-form-group>
+                    <b-form-input v-model="formularioArquetipos[key]" v-if="cargado"></b-form-input> <!-- Hacerlo de la forma legal "investiga"-->
+                    <b-form-input v-model="formularioArquetipos[key]" disabled v-else></b-form-input> 
+                </p>
             </b-tab></b-tabs></b-card></div></b-form>
+            <button @click="mostrar()">arquetipos</button>
     </b-col>
 </template>
 
@@ -29,9 +34,7 @@ export default {
                 Edad  : "99",
                 Fecha_Nacimiento: "123",
             },
-            formularioArquetipos:{
-
-            },
+            formularioArquetipos: this.formularioArquetipos1,
             cargado: false,
 
         }
@@ -40,8 +43,12 @@ export default {
         testeo(){
             console.log(this.formularioBase);
         },
+        mostrar(){
+            console.log(this.formularioArquetipos1);
+        }
 
-    }
+    },
+    props:['formularioArquetipos1']
 }
 </script>
 

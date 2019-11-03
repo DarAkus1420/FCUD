@@ -1,10 +1,8 @@
 <template>
     <div>
         <label class="center drop-zone">
-            <input type="file" name="examinar" class="form-control-file" accept=".json,.xml,.adl" @change="cargarArchivo">
-        
+            <input type="file" name="examinar" class="form-control-file" accept=".json,.xml,.adl" @change="readFile">     
 	    </label>  
-        {{formulario}} 
         <button @click="mostrar()">HOLA</button>
     </div>       
 </template>
@@ -20,26 +18,29 @@ export default {
         }
     },
     methods:{
-        cargarArchivo(events){
-
-            
-            this.archivo = event.target.files;
-            // let promesa = new Promise()
-
-            for(let i = 0, f; f = this.archivo[i];i++){
-                let lector = new FileReader();
-                lector.onload = function(e) {
-                    let contenido = e.target.result;
-                    let hola = JSON.parse(contenido);
-                    console.log(hola);
-                }
-                lector.readAsText(f);
-            };
-
-        
+        cargarArchivo(data){    
+            this.formulario = data;
+            this.$emit('cargarFormulario', this.formulario);
         },
         mostrar(){
-            console.log(this.hola);
+            console.log(this.formulario);
+        },
+        readFile(event){
+            let file = event.target.files['0'];
+            new Promise(function(resolve, reject){
+                let reader = new FileReader();
+                reader.onload = function (evt){
+                    resolve(JSON.parse(evt.target.result));
+                };
+                reader.readAsText(file);
+                reader.onerror = reject;
+            })
+            .then(this.cargarArchivo)
+            .catch(function(err){
+                console.log(err)
+            });
+
+            
         }
         
     }

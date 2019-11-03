@@ -9,10 +9,10 @@
 			</b-container>
 			<b-container>
 				<b-row>
-					<Formulario></Formulario>
+					<Formulario v-bind:formularioArquetipos1="this.formulario"></Formulario>
             		<!--Es el placeholder-->
 					<b-col sm='5' md='5' xl='5'>
-						<CargarArchivo></CargarArchivo>
+						<CargarArchivo @cargarFormulario='formulario = $event'></CargarArchivo>
 						<PlaceHolder></PlaceHolder>
 					</b-col>
 				</b-row>
@@ -21,6 +21,7 @@
         		<!--Aqui esta el boton con el cual podremos subir el archivo a la base de datos-->
             	<SubirArchivo></SubirArchivo>
         	</b-container>
+			<button @click="mostrar()">hola</button>
 		</div>
 	</div>
 </template>
@@ -49,9 +50,15 @@ export default {
 	},
 	data(){
 		return{
-			state: true
+			state: true,
+			formulario: undefined
 		}
 	},
+	methods:{
+		mostrar(){
+			console.log(this.formulario);
+		}
+	}
 }
 </script>
 
