@@ -9,10 +9,10 @@
 			</b-container>
 			<b-container>
 				<b-row>
-					<Formulario v-bind:formularioArquetipos1="this.formulario"></Formulario>
+					<Formulario v-bind:formularioArquetipos1="this.formulario"></Formulario> <!--Se envia el formulario al prop formularioArquetipos1 del componente-->
             		<!--Es el placeholder-->
 					<b-col sm='5' md='5' xl='5'>
-						<CargarArchivo @cargarFormulario='formulario = $event'></CargarArchivo>
+						<CargarArchivo @cargarFormulario='formulario = $event'></CargarArchivo> <!--Se recibe el evento del componente y se guarda en la variable local formulario-->
 						<PlaceHolder></PlaceHolder>
 					</b-col>
 				</b-row>
@@ -51,7 +51,7 @@ export default {
 	data(){
 		return{
 			state: true,
-			formulario: undefined
+			formulario: undefined //Variable creada para recibir el formulario
 		}
 	},
 	methods:{

@@ -18,19 +18,22 @@ export default {
         }
     },
     methods:{
+        /*Recordar que este objeto tiene que pasarse a los conversores de datos (xml, adl) para enviarlo al place holder
+         y asi poder arrastarlo al tab del formulario, aqui
+        lo hice directamente para probar el traspaso de informacion entre componentes*/
         cargarArchivo(data){    
-            this.formulario = data;
-            this.$emit('cargarFormulario', this.formulario);
+            this.formulario = data; //Se reciben los datos cuando la accion se realiza con la promesa
+            this.$emit('cargarFormulario', this.formulario); //Se emite un evento para pasar el archivo a otros componentes
         },
         mostrar(){
             console.log(this.formulario);
         },
         readFile(event){
-            let file = event.target.files['0'];
+            let file = event.target.files['0']; //Falta agregar el for para que lea multiples archivos
             new Promise(function(resolve, reject){
                 let reader = new FileReader();
                 reader.onload = function (evt){
-                    resolve(JSON.parse(evt.target.result));
+                    resolve(JSON.parse(evt.target.result)); //Se transforma el json a objeto de js
                 };
                 reader.readAsText(file);
                 reader.onerror = reject;

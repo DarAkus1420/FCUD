@@ -12,8 +12,8 @@
                 </p>
                 <b-button @click="testeo()" variant="primary">Prueba de Formulario</b-button>
             </b-tab>
-            <b-tab title="Otros Datos" ondrop="dop(event)" ondragover="allowDropEvent(event)">
-                <p v-for="(item, key) in this.formularioArquetipos" v-bind:key="key">
+            <b-tab title="Otros Datos" ondrop="dop(event)" ondragover="allowDropEvent(event)"> <!--Falta lograr que cuando se registre el cambio en la variable-->
+                <p v-for="(item, key) in this.formularioArquetipos" v-bind:key="key">          <!--se creen todos los inputs y forms dentro del tab-->
                     <b-form-group v-bind:description="key"></b-form-group>
                     <b-form-input v-model="formularioArquetipos[key]" v-if="cargado"></b-form-input> <!-- Hacerlo de la forma legal "investiga"-->
                     <b-form-input v-model="formularioArquetipos[key]" disabled v-else></b-form-input> 
@@ -34,7 +34,7 @@ export default {
                 Edad  : "99",
                 Fecha_Nacimiento: "123",
             },
-            formularioArquetipos: this.formularioArquetipos1,
+            formularioArquetipos: this.formularioArquetipos1, //Se asigna el dato recibido a la variable
             cargado: false,
 
         }
@@ -48,7 +48,7 @@ export default {
         }
 
     },
-    props:['formularioArquetipos1']
+    props:['formularioArquetipos1'] //Prop para recibir el formulario (cambiar nombre)
 }
 </script>
 
