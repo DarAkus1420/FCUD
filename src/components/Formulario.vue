@@ -19,7 +19,6 @@
                     <b-form-input v-model="formularioArquetipos[key]" disabled v-else></b-form-input> 
                 </p>
             </b-tab></b-tabs></b-card></div></b-form>
-            <button @click="mostrar()">arquetipos</button>
     </b-col>
 </template>
 
@@ -40,12 +39,6 @@ export default {
         }
     },
     methods:{
-        testeo(){
-            console.log(this.formularioBase);
-        },
-        mostrar(){
-            console.log(this.formularioArquetipos1);
-        }
 
     },
     props:['formularioArquetipos1'] //Prop para recibir el formulario (cambiar nombre)

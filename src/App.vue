@@ -21,7 +21,6 @@
         		<!--Aqui esta el boton con el cual podremos subir el archivo a la base de datos-->
             	<SubirArchivo></SubirArchivo>
         	</b-container>
-			<button @click="mostrar()">hola</button>
 		</div>
 	</div>
 </template>
@@ -55,9 +54,6 @@ export default {
 		}
 	},
 	methods:{
-		mostrar(){
-			console.log(this.formulario);
-		}
 	}
 }
 </script>

@@ -1,5 +1,6 @@
 <template>
-    <div>
+     <div>
+        <button @click="subir();"> llama al php</button>
     </div>
 </template>
 

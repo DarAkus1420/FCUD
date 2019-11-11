@@ -3,7 +3,6 @@
         <label class="center drop-zone">
             <input type="file" name="examinar" class="form-control-file" accept=".json,.xml,.adl" @change="readFile">     
 	    </label>  
-        <button @click="mostrar()">HOLA</button>
     </div>       
 </template>
 
@@ -24,9 +23,6 @@ export default {
         cargarArchivo(data){    
             this.formulario = data; //Se reciben los datos cuando la accion se realiza con la promesa
             this.$emit('cargarFormulario', this.formulario); //Se emite un evento para pasar el archivo a otros componentes
-        },
-        mostrar(){
-            console.log(this.formulario);
         },
         readFile(event){
             let file = event.target.files['0']; //Falta agregar el for para que lea multiples archivos
