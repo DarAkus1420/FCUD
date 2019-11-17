@@ -39,7 +39,9 @@ export default {
         }
     },
     methods:{
-
+        testeo(){
+            console.log(this.formularioBase);
+        }
     },
     props:['formularioArquetipos1'] //Prop para recibir el formulario (cambiar nombre)
 }

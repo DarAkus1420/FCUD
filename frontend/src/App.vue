@@ -1,5 +1,6 @@
 <template>
   	<div id="app">
+		
 		<br>
 		<Login class="login" @cambioEstado='state = $event' v-if="state"></Login>
 		<div id="menu" v-if="!state">
@@ -22,6 +23,7 @@
             	<SubirArchivo></SubirArchivo>
         	</b-container>
 		</div>
+		<router-view></router-view>
 	</div>
 </template>
 
