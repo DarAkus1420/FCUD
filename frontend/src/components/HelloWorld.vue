@@ -2,12 +2,15 @@
     <div class="">
         <p>{{ mensaje }}</p>
         <button @click="mostrar">WENA</button>
+        <button @click="myAwesomeMethod">holamundo</button>
     </div>
 </template>
 
 <script>
 import axios from 'axios'
+import XMLInterpreter from '../mixins/Interpreter/XMLInterpreter.js'
 export default {
+    mixins: [XMLInterpreter],
     name: 'Main',
     data(){
         return{
@@ -26,9 +29,18 @@ export default {
         },
         mostrar(){
             this.getMensaje();
+            console.log("Script 1")
+        },
+        hola(){
+            this.myAwesomeMethod();
         }
-    }
+    },
+    mounted() {
+        this.myAwesomeMethod();
+    },
 }
+</script>
+
 </script>
 
 <style lang="css" scoped>

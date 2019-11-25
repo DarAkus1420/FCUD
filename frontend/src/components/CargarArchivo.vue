@@ -3,6 +3,8 @@
         <label class="center drop-zone">
             <input type="file" name="examinar" class="form-control-file" accept=".json,.xml,.adl" @change="readFile">     
 	    </label>  
+        <XMLInterpreter></XMLInterpreter>
+        <ADLInterpreter></ADLInterpreter>
     </div>       
 </template>
 

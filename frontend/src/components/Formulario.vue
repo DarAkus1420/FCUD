@@ -10,7 +10,7 @@
                     <b-form-input v-model="formularioBase[key]" v-if="cargado"></b-form-input> <!-- Hacerlo de la forma legal "investiga"-->
                     <b-form-input v-model="formularioBase[key]" disabled v-else></b-form-input> 
                 </p>
-                <b-button @click="testeo()" variant="primary">Prueba de Formulario</b-button>
+                <b-button @click="enviarArchivo()" variant="primary">Subir al servidor</b-button>
             </b-tab>
             <b-tab title="Otros Datos" ondrop="dop(event)" ondragover="allowDropEvent(event)"> <!--Falta lograr que cuando se registre el cambio en la variable-->
                 <p v-for="(item, key) in this.formularioArquetipos" v-bind:key="key">          <!--se creen todos los inputs y forms dentro del tab-->
@@ -41,7 +41,28 @@ export default {
     methods:{
         testeo(){
             console.log(this.formularioBase);
+        },
+        enviarArchivo(){
+            const path = 'http://127.0.0.1:5000/api/post/subirFormulario';
+            fetch(path, {
+                method: 'POST',
+                body: JSON.stringify(this.formularioBase)
+            })
+            .then((respones) => {
+                if(response.ok){
+                    return response.text
+                }else{
+                    throw 'Error en la llamada';
+                }
+            })
+            .then((texto) => {
+                console.log(texto);
+            })
+            .catch((error) => {
+                console.log(error);
+            })
         }
+
     },
     props:['formularioArquetipos1'] //Prop para recibir el formulario (cambiar nombre)
 }

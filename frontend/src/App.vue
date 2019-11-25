@@ -36,6 +36,8 @@ import PlaceHolder from './components/PlaceHolder.vue'
 import CargarArchivo from './components/CargarArchivo.vue'
 import Formulario from './components/Formulario.vue'
 import Login from './components/Login.vue'
+import XMLInterpreter from './components/XMLInterpreter.vue'
+import ADLInterpreter from './components/ADLInterpreter.vue'
 
 
 export default {
@@ -85,5 +87,9 @@ export default {
 	.wena{
     	font-size: 30cm;
     	color:red;
+	}
+
+	.titanic{
+		float: none;
 	}
 </style>
