@@ -32,9 +32,11 @@ export default {
                 Rut   : "123",
                 Edad  : "99",
                 Fecha_Nacimiento: "123",
+                hola: "a",
+                usuario: ""
             },
             formularioArquetipos: this.formularioArquetipos1, //Se asigna el dato recibido a la variable
-            cargado: false,
+            cargado: true,
 
         }
     },
@@ -43,14 +45,21 @@ export default {
             console.log(this.formularioBase);
         },
         enviarArchivo(){
+            console.log(JSON.stringify(this.formularioBase))
             const path = 'http://127.0.0.1:5000/api/post/subirFormulario';
-            fetch(path, {
+            fetch(path, {    
                 method: 'POST',
-                body: JSON.stringify(this.formularioBase)
+                credentials: "include",
+                body: JSON.stringify(this.formularioBase),
+                cache: "no-cache",
+                headers: new Headers({
+                    'Acept': 'application/json',
+                    "content-type": "application/json"
+                })
             })
-            .then((respones) => {
+            .then(response => {
                 if(response.ok){
-                    return response.text
+                    return response.json()
                 }else{
                     throw 'Error en la llamada';
                 }

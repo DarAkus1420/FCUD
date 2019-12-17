@@ -3,13 +3,14 @@
         <label class="center drop-zone">
             <input type="file" name="examinar" class="form-control-file" accept=".json,.xml,.adl" @change="readFile">     
 	    </label>  
-        <XMLInterpreter></XMLInterpreter>
-        <ADLInterpreter></ADLInterpreter>
     </div>       
 </template>
 
 <script>
+import XMLInterpreter from '../mixins/Interpreter/XMLInterpreter.js'
+import ADLInterpreter from '../mixins/Interpreter/ADLInterpreter.js'
 export default {
+    mixins: [XMLInterpreter, ADLInterpreter],
     name: 'CargarArchivo',
     data(){
         return{
@@ -31,6 +32,7 @@ export default {
             new Promise(function(resolve, reject){
                 let reader = new FileReader();
                 reader.onload = function (evt){
+                    console.log(evt)
                     resolve(JSON.parse(evt.target.result)); //Se transforma el json a objeto de js
                 };
                 reader.readAsText(file);

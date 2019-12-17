@@ -7,20 +7,20 @@
                             <h4>{{ title }}</h4>
                             <b-row id='pad'>
                                 <b-col xs='12' sm='12' md='12' v-if="form.type==0">
-                                    <input class="form-control" type="email"  placeholder="Email" v-model="form.email">
+                                    <input class="form-control" type="text"  placeholder="Usuario" v-model="formulario.usuario">
                                 </b-col>
                                 <b-col xs='12' sm='12' md='12' v-else-if="form.type==1">
-                                    <input class="form-control" type="text"  placeholder="Codigo" v-model="form.codigoTSF">
+                                    <input class="form-control" type="text"  placeholder="Codigo" v-model="formulario.codigoTSF">
                                 </b-col>
                             </b-row>
                             <b-row id="pad">
                                 <b-col xs="12" sm="12" md="12" v-if="form.type==0">
-                                    <input class="form-control" type="password" :class="{'error':validaPassword}" placeholder="Contraseña" v-model="form.password" >
+                                    <input class="form-control" type="password" :class="{'error':validaPassword}" placeholder="Contraseña" v-model="formulario.contraseña" >
                                 </b-col>
                             </b-row>
                             <b-row id="pad" class="ancho">
                             <b-col sm='10' md='12'>
-                                    <b-button type='submit' block variant="primary" v-if="form.type==0">Iniciar sesión</b-button>
+                                    <b-button type="submit" block variant="primary" v-if="form.type==0">Iniciar sesión</b-button>
                                     <b-button type='submit' block variant="primary" v-else-if="form.type==1">Validar Codigo</b-button>
                                 </b-col>
                             </b-row>
@@ -38,23 +38,52 @@ export default {
             form:{
                 state: true, // 0 = Login , 1 = Verificacion dos pasos
                 type: 0,
-                email:"",
-                password:"", 
-                codigoTSF:""}
+            },
+            formulario:{
+                usuario:"",
+                contraseña:"", 
+                codigoTSF:""
             }
+        }
+
     },
     methods:{
         sendForm(){
             if(this.validaType()){
-                //Implementar php
-                console.log(this.form.email + this.form.password);
+                //Implementar python
+                console.log(this.formulario.usuario + this.formulario.contraseña);
                 this.form.type = 1;
+                console.log(JSON.stringify(this.formulario))
+                const path = 'http://127.0.0.1:5000/api/post/queryClient';
+                fetch(path, {    
+                    method: 'POST',
+                    credentials: "include",
+                    body: JSON.stringify(this.formulario),
+                    cache: "no-cache",
+                    headers: new Headers({
+                        'Acept': 'application/json',
+                        "content-type": "application/json"
+                    })
+                })
+                .then(response => {
+                    if(response.ok){
+                        return response.json()
+                    }else{
+                        throw 'Error en la llamada';
+                    }
+                })
+                .then((texto) => {
+                    console.log(texto);
+                })
+                .catch((error) => {
+                    console.log(error);
+                })
             }
         },
         sendAutentificator(){
             if(this.validaType()){
                 //Implementar php
-                console.log(this.form.codigoTSF);
+                console.log(this.formulario.codigoTSF);
                 
                 this.form.state = false;
                 this.$emit('cambioEstado', this.state);
@@ -77,12 +106,15 @@ export default {
         },
         validaCodigo(){ //metodo que valida el codigo de verificacion de dos pasos
             
+        },
+        enviarArchivo(){
+            
         }
     },
     computed:{
         validaEmail(){
             var exp = /^(([^<>()[].,;:\s@"]+(.[^<>()[].,;:\s@"]+))|(".+"))@(([^<>()[].,;:\s@"]+.)+[^<>()[].,;:\s@"]{2,})$/i;
-            if(exp.test(this.form.email)){
+            if(exp.test(this.formulario.usuario)){
                 return false;
             } else{
                 return true;
@@ -90,7 +122,7 @@ export default {
         },
         validaPassword(){
             var exp = /^(?=.\d)(?=.[a-záéíóúüñ]).[A-ZÁÉÍÓÚÜÑ]/;
-            if(exp.test(this.form.password)){
+            if(exp.test(this.formulario.contraseña)){
                 return false;
             } else{
                 return true;
